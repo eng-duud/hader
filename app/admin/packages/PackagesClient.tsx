@@ -372,7 +372,7 @@ export const PackagesClient: React.FC<PackagesClientProps> = ({ initialPackages 
               <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                 <div>
                   <label className="block text-xs font-semibold text-typography-primary">
-                    السعر (اتركه فارغاً لعرض "تواصل معنا")
+                    السعر (اتركه فارغاً لعرض «تواصل معنا»)
                   </label>
                   <input
                     type="number"

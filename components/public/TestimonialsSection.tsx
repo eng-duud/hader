@@ -33,7 +33,7 @@ export const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({ items,
             className="rounded-2xl border border-border-subtle bg-surface-panel p-6 shadow-sm"
           >
             <p className="text-sm sm:text-base text-typography-muted italic leading-relaxed">
-              "{locale === 'ar' ? item.quote_ar || item.quote_en : item.quote_en || item.quote_ar}"
+              &ldquo;{locale === 'ar' ? item.quote_ar || item.quote_en : item.quote_en || item.quote_ar}&rdquo;
             </p>
             <div className="mt-4 pt-4 border-t border-border-subtle">
               <p className="font-bold text-sm text-typography-primary">
