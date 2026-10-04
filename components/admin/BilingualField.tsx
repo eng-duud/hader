@@ -5,8 +5,8 @@ import { AlertTriangle } from 'lucide-react';
 
 interface BilingualFieldProps {
   label: string;
-  nameAr: string;
-  nameEn: string;
+  nameAr?: string;
+  nameEn?: string;
   valueAr?: string;
   valueEn?: string;
   placeholderAr?: string;
@@ -22,8 +22,8 @@ interface BilingualFieldProps {
 
 export const BilingualField: React.FC<BilingualFieldProps> = ({
   label,
-  nameAr,
-  nameEn,
+  nameAr = 'name_ar',
+  nameEn = 'name_en',
   valueAr = '',
   valueEn = '',
   placeholderAr = '',

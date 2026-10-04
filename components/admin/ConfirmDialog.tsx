@@ -10,6 +10,7 @@ interface ConfirmDialogProps {
   confirmLabel?: string;
   cancelLabel?: string;
   isDestructive?: boolean;
+  variant?: 'danger' | 'default';
   loading?: boolean;
   onConfirm: () => void;
   onCancel: () => void;
@@ -22,10 +23,12 @@ export const ConfirmDialog: React.FC<ConfirmDialogProps> = ({
   confirmLabel = 'تأكيد الحذف',
   cancelLabel = 'إلغاء',
   isDestructive = true,
+  variant,
   loading = false,
   onConfirm,
   onCancel,
 }) => {
+  const destructive = variant ? variant === 'danger' : isDestructive;
   if (!isOpen) return null;
 
   return (
@@ -33,7 +36,7 @@ export const ConfirmDialog: React.FC<ConfirmDialogProps> = ({
       <div className="w-full max-w-md rounded-2xl border border-border-subtle bg-surface-elevated p-6 shadow-2xl transition-all">
         <div className="flex items-start gap-4">
           <div className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-xl ${
-            isDestructive ? 'bg-status-error/10 text-status-error' : 'bg-brand-accent/10 text-brand-accent'
+            destructive ? 'bg-status-error/10 text-status-error' : 'bg-brand-accent/10 text-brand-accent'
           }`}>
             <AlertTriangle className="h-6 w-6" />
           </div>
@@ -57,7 +60,7 @@ export const ConfirmDialog: React.FC<ConfirmDialogProps> = ({
             disabled={loading}
             onClick={onConfirm}
             className={`inline-flex items-center justify-center gap-2 rounded-lg px-4 py-2 text-sm font-semibold text-white shadow-sm transition-colors disabled:opacity-50 ${
-              isDestructive
+              destructive
                 ? 'bg-status-error hover:bg-status-error/90'
                 : 'bg-brand-primary hover:bg-brand-primary-hover'
             }`}

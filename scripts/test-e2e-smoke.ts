@@ -14,7 +14,7 @@
 import { getSiteSettings } from '../lib/data/settings';
 import { getFeaturedClients, createClientRecord, updateClientRecord, deleteClientRecord } from '../lib/data/clients';
 import { checkLoginRateLimit, recordFailedLoginAttempt, resetLoginAttempts } from '../lib/auth/rate-limiter';
-import { checkRateLimit } from '../lib/security/spam-protection';
+import { checkIpRateLimit } from '../lib/security/spam-protection';
 import { validateAndNormalizeUrl, generateClientSlug } from '../lib/utils/client-helpers';
 
 let passed = 0;
@@ -41,9 +41,9 @@ async function runSmokeTests() {
   console.log('--- 1. Home Loads in /ar and /en ---');
   const settings = await getSiteSettings();
   assert(settings !== null && typeof settings === 'object', 'Site settings successfully retrieved from data layer');
-  assert(!!settings.company_name_ar && settings.company_name_ar === 'حاضر', 'Arabic brand name matches specification: حاضر');
-  assert(!!settings.company_name_en && settings.company_name_en.toLowerCase().includes('hader'), 'English brand name matches specification: Hader');
-  assert(!!settings.phone && !!settings.whatsapp, 'Official contact phone and WhatsApp are defined in settings');
+  assert(!!settings?.company_name_ar && settings.company_name_ar === 'حاضر', 'Arabic brand name matches specification: حاضر');
+  assert(!!settings?.company_name_en && settings.company_name_en.toLowerCase().includes('hader'), 'English brand name matches specification: Hader');
+  assert(!!settings?.phone && !!settings?.whatsapp, 'Official contact phone and WhatsApp are defined in settings');
 
   // ---------------------------------------------------------------------------
   // 2. LANGUAGE SWITCH PRESERVES PATH & LOCALES
@@ -85,11 +85,11 @@ async function runSmokeTests() {
   const testIp = `test-e2e-${Date.now()}`;
   let rateLimitAllowed = true;
   for (let i = 0; i < 5; i++) {
-    const res = checkRateLimit(testIp);
+    const res = checkIpRateLimit(testIp);
     if (!res.allowed) rateLimitAllowed = false;
   }
   assert(rateLimitAllowed, 'IP rate limiter permits initial 5 submissions within window');
-  const blockedRes = checkRateLimit(testIp);
+  const blockedRes = checkIpRateLimit(testIp);
   assert(!blockedRes.allowed, 'IP rate limiter strictly blocks 6th submission within 1 hour window');
 
   // ---------------------------------------------------------------------------
@@ -106,7 +106,7 @@ async function runSmokeTests() {
   }
   const throttledCheck = checkLoginRateLimit(testLoginThrottleKey);
   assert(!throttledCheck.allowed, 'Login rate limiter blocks after 5 failed attempts');
-  assert(throttledCheck.retryAfterSeconds > 0, 'Login rate limiter returns positive retry-after duration');
+  assert((throttledCheck.retryAfterSeconds ?? 0) > 0, 'Login rate limiter returns positive retry-after duration');
 
   resetLoginAttempts(testLoginThrottleKey);
   const resetCheck = checkLoginRateLimit(testLoginThrottleKey);

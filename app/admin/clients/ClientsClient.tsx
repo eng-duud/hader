@@ -154,7 +154,7 @@ export const ClientsClient: React.FC<ClientsClientProps> = ({
 
   // Live URL validation check
   const urlStatus = useMemo(() => {
-    if (!websiteUrl.trim()) return { isValid: false, message: 'مطلوب' };
+    if (!websiteUrl.trim()) return { isValid: false, error: 'مطلوب' };
     return validateAndNormalizeUrl(websiteUrl);
   }, [websiteUrl]);
 

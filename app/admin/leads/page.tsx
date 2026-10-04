@@ -7,6 +7,5 @@ export default async function AdminLeadsPage() {
   const session = await requireAuth();
   const leads = await getLeads();
 
-  return <LeadsClient initialLeads={leads} userRole={session.role} />;
+  return <LeadsClient initialLeads={leads} userRole={session.profile.role} />;
 }
-

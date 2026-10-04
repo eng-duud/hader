@@ -4,15 +4,19 @@ import React, { useState, useMemo } from 'react';
 import { Search, ChevronLeft, ChevronRight, Inbox } from 'lucide-react';
 
 export interface Column<T> {
-  header: string;
+  header: React.ReactNode;
   accessorKey?: keyof T;
   cell?: (row: T) => React.ReactNode;
+  /** Legacy aliases retained for admin pages not yet migrated. */
+  key?: string;
+  render?: (row: T, index: number) => React.ReactNode;
   className?: string;
 }
 
 interface DataTableProps<T> {
   data: T[];
   columns: Column<T>[];
+  keyExtractor?: (item: T) => React.Key;
   searchPlaceholder?: string;
   searchKey?: keyof T;
   filterOptions?: { label: string; value: string; filterFn: (item: T) => boolean }[];
@@ -23,6 +27,7 @@ interface DataTableProps<T> {
 export function DataTable<T extends Record<string, any>>({
   data,
   columns,
+  keyExtractor,
   searchPlaceholder = 'بحث...',
   searchKey,
   filterOptions,
@@ -145,7 +150,7 @@ export function DataTable<T extends Record<string, any>>({
               {paginatedData.length > 0 ? (
                 paginatedData.map((row, rowIdx) => (
                   <tr
-                    key={rowIdx}
+                    key={keyExtractor ? keyExtractor(row) : rowIdx}
                     className="transition-colors hover:bg-surface-sunken/40"
                   >
                     {columns.map((col, colIdx) => (
@@ -155,6 +160,8 @@ export function DataTable<T extends Record<string, any>>({
                       >
                         {col.cell
                           ? col.cell(row)
+                          : col.render
+                          ? col.render(row, rowIdx)
                           : col.accessorKey
                           ? String(row[col.accessorKey] ?? '')
                           : null}

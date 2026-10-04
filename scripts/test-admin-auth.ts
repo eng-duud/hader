@@ -96,7 +96,7 @@ export async function runAdminAuthTests(): Promise<boolean> {
 
   // TEST 5: Bidirectional Admin Languages
   const arDir = 'ar' === 'ar' ? 'rtl' : 'ltr';
-  const enDir = 'en' === 'ar' ? 'rtl' : 'ltr';
+  const enDir = 'ltr';
   const bidiPassed = arDir === 'rtl' && enDir === 'ltr';
   results.push({
     name: '6. Bidirectional Admin UI Support',
