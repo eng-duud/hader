@@ -1,0 +1,135 @@
+{
+  "common": {
+    "brandName": "Hader",
+    "tagline": "Hader — be present where your customers look.",
+    "language": "English",
+    "switchLanguage": "العربية",
+    "nav": {
+      "services": "Services",
+      "clients": "Clients",
+      "packages": "Packages",
+      "faq": "FAQ",
+      "contact": "Contact"
+    },
+    "cta": {
+      "requestProposal": "Request a proposal",
+      "whatsapp": "WhatsApp",
+      "contactUs": "Contact us",
+      "visitSite": "Visit site"
+    },
+    "theme": {
+      "toggle": "Toggle theme",
+      "light": "Light",
+      "dark": "Dark"
+    }
+  },
+  "home": {
+    "hero": {
+      "badge": "Digital services for upscale businesses in Yemen",
+      "title": "We build your digital presence and answer your customers instantly.",
+      "subtitle": "Professional websites, automated replies on social platforms with complaints routed to your team, and your business pinned on the map.",
+      "ctaPrimary": "Request a proposal",
+      "ctaSecondary": "Chat on WhatsApp"
+    },
+    "problem": {
+      "title": "Why businesses lose customers every day",
+      "description": "Lacking a credible website and responding slowly to customer inquiries on social platforms directly costs you clients who are looking for your services right now."
+    },
+    "services": {
+      "sectionTitle": "Our Core Services",
+      "sectionSubtitle": "Comprehensive solutions tailored to elevate brand credibility and drive customer action",
+      "web": {
+        "title": "Website Design & Development",
+        "description": "Fast, elegant websites that reflect your business excellence and showcase your offerings to prospective clients."
+      },
+      "automation": {
+        "title": "Social Reply Automation",
+        "description": "Instant responses to routine questions with direct, automated escalation of complaints to a designated human on your team."
+      },
+      "maps": {
+        "title": "Local Search & Map Presence",
+        "description": "Precise Google Maps verification and local search optimization so customers locate and visit your physical venue with ease."
+      }
+    },
+    "howItWorks": {
+      "title": "How We Work",
+      "subtitle": "A transparent 4-stage process from discovery to launch and ongoing maintenance",
+      "step1": "1. Discovery & Scope",
+      "step2": "2. Design & Build",
+      "step3": "3. Launch & Verification",
+      "step4": "4. Ongoing Support"
+    },
+    "featuredClients": {
+      "title": "Selected Client Showcases",
+      "subtitle": "Real web solutions delivered for leading businesses across Yemen",
+      "viewAll": "View all clients"
+    },
+    "packages": {
+      "title": "Packages & Plans",
+      "subtitle": "Clear, structured options tailored to your business scale",
+      "contactForPrice": "Contact us"
+    },
+    "faq": {
+      "title": "Frequently Asked Questions",
+      "subtitle": "Clear answers to essential questions regarding our digital services"
+    },
+    "ctaSection": {
+      "title": "Ready to build a digital presence worthy of your brand?",
+      "subtitle": "Contact us today. We will be present to help you launch your premier online front.",
+      "button": "Request a Custom Proposal"
+    }
+  },
+  "clients": {
+    "title": "Our Clients & Work",
+    "subtitle": "Explore websites and digital solutions crafted for our business partners",
+    "filterAll": "All",
+    "emptyMessage": "Live client showcases will appear here shortly.",
+    "visitLive": "Visit live site"
+  },
+  "contact": {
+    "title": "Contact Hader",
+    "subtitle": "We are eager to understand your business objectives and provide the optimal digital solution",
+    "form": {
+      "name": "Full Name",
+      "namePlaceholder": "e.g. Abdullah Ahmed",
+      "businessName": "Business / Organization Name",
+      "businessNamePlaceholder": "e.g. Al-Saeed Restaurant",
+      "phone": "Phone / WhatsApp",
+      "phonePlaceholder": "+967 ...",
+      "email": "Email (Optional)",
+      "emailPlaceholder": "name@company.com",
+      "servicesOfInterest": "Services of Interest",
+      "message": "Project Details or Inquiry",
+      "messagePlaceholder": "Tell us about your project or inquiry...",
+      "submit": "Submit Request",
+      "consent": "By submitting this form, you agree to our Privacy Policy."
+    },
+    "info": {
+      "locationTitle": "Location",
+      "locationValue": "Sanaa, Republic of Yemen",
+      "hoursTitle": "Working Hours",
+      "hoursValue": "Saturday - Thursday: 9:00 AM - 6:00 PM",
+      "emailTitle": "Email",
+      "emailValue": "contact@hader.ye",
+      "phoneTitle": "Phone / WhatsApp",
+      "phoneValue": "+967 770 000 000"
+    }
+  },
+  "legal": {
+    "privacyTitle": "Privacy Policy",
+    "termsTitle": "Terms of Service",
+    "lastUpdated": "Last updated: October 2026",
+    "reviewNotice": "This legal document is a preliminary draft pending formal legal counsel review."
+  },
+  "footer": {
+    "description": "Distinguished digital services for upscale businesses in Yemen. Crafting bespoke websites, automating replies, and securing local map presence.",
+    "quickLinks": "Quick Links",
+    "legalLinks": "Legal",
+    "rightsReserved": "All rights reserved. Hader."
+  },
+  "errors": {
+    "notFoundTitle": "Page Not Found (404)",
+    "notFoundDescription": "Sorry, the page you are looking for does not exist or has been moved.",
+    "backHome": "Back to Home"
+  }
+}

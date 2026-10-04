@@ -1,0 +1,90 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-primary: #0c1e34;
+  --color-primary-hover: #132b47;
+  --color-primary-foreground: #ffffff;
+  --color-accent: #c68a17;
+  --color-accent-foreground: #0c1e34;
+  --color-surface-base: #f8fafc;
+  --color-surface-elevated: #ffffff;
+  --color-surface-sunken: #f1f5f9;
+  --color-text-primary: #0c1e34;
+  --color-text-muted: #475569;
+  --color-border-subtle: #e2e8f0;
+  --color-border-strong: #cbd5e1;
+  --color-success: #0d7a53;
+  --color-error: #b91c1c;
+}
+
+.dark {
+  --color-primary: #2a528a;
+  --color-primary-hover: #3564a5;
+  --color-primary-foreground: #f8fafc;
+  --color-accent: #e5a832;
+  --color-accent-foreground: #080e18;
+  --color-surface-base: #080e18;
+  --color-surface-elevated: #0f1a2a;
+  --color-surface-sunken: #0b1422;
+  --color-text-primary: #f8fafc;
+  --color-text-muted: #94a3b8;
+  --color-border-subtle: #1e293b;
+  --color-border-strong: #334155;
+  --color-success: #22c55e;
+  --color-error: #f87171;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not(.light) {
+    --color-primary: #2a528a;
+    --color-primary-hover: #3564a5;
+    --color-primary-foreground: #f8fafc;
+    --color-accent: #e5a832;
+    --color-accent-foreground: #080e18;
+    --color-surface-base: #080e18;
+    --color-surface-elevated: #0f1a2a;
+    --color-surface-sunken: #0b1422;
+    --color-text-primary: #f8fafc;
+    --color-text-muted: #94a3b8;
+    --color-border-subtle: #1e293b;
+    --color-border-strong: #334155;
+    --color-success: #22c55e;
+    --color-error: #f87171;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-surface-base);
+  color: var(--color-text-primary);
+  font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+}
+
+/* Ensure no physical margin/padding collapse in RTL */
+[dir='rtl'] {
+  text-align: start;
+}
+
+/* Accessibility: Respect user preference for reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Consistent accessible visible focus outline */
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+

@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 64" fill="none" class="hader-wordmark">
+  <defs>
+    <linearGradient id="hader-gold-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#D49D24" />
+      <stop offset="100%" stop-color="#B27B10" />
+    </linearGradient>
+  </defs>
+
+  <!-- Brand Mark: Contemporary Presence Indicator & Arabic 'ح' Monogram -->
+  <g transform="translate(8, 8)">
+    <!-- Base geometric ring -->
+    <rect width="48" height="48" rx="12" fill="currentColor" class="text-brand-primary" />
+    <!-- Stylized Arabic Ha / Presence Accent dot -->
+    <path d="M16 28C16 21.3726 21.3726 16 28 16H34V22H28C24.6863 22 22 24.6863 22 28C22 31.3137 24.6863 34 28 34H34V40H28C21.3726 40 16 34.6274 16 28Z" fill="#FFFFFF" fill-opacity="0.95" />
+    <circle cx="34" cy="20" r="4" fill="url(#hader-gold-gradient)" />
+  </g>
+
+  <!-- Arabic Wordmark: حاضر -->
+  <text x="68" y="38" font-family="Cairo, system-ui, sans-serif" font-weight="800" font-size="28" fill="currentColor" class="text-brand-primary" letter-spacing="0">حاضر</text>
+
+  <!-- Tagline / Latin Name: HADER -->
+  <text x="146" y="36" font-family="Inter, system-ui, sans-serif" font-weight="700" font-size="16" fill="currentColor" class="text-brand-primary" letter-spacing="0.18em">HADER</text>
+  <text x="69" y="52" font-family="Inter, system-ui, sans-serif" font-weight="500" font-size="9.5" fill="#C68A17" letter-spacing="0.22em">DIGITAL SERVICES</text>
+</svg>
